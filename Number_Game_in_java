@@ -1,0 +1,39 @@
+#Code for number game in java
+import java.util.Scanner;
+import java.util.Random;
+class number_guesses{
+    public int usr_inp;
+    public int rnd_nmr;
+    public int no_of_guesses;
+    number_guesses(){
+        Random rnd = new Random();
+        this.rnd_nmr = rnd.nextInt(100);
+    }
+    void take_input_from_user(){
+        System.out.print("Enter your decided number between 0 to 100 -->> ");
+        Scanner scr = new Scanner(System.in);
+        this.usr_inp = scr.nextInt();
+    }
+    boolean check_the_number(){
+        no_of_guesses++;
+        if(usr_inp==rnd_nmr){
+            System.out.printf("Congratulations !! \nYou have successfully guess the number in %d tries\n ",no_of_guesses);
+            return true;
+        } else if (usr_inp>rnd_nmr){
+            System.out.println("No !! \nPlease enter a smaller value than this\n");
+        } else if (usr_inp<rnd_nmr){
+            System.out.println("No !! \nPlease enter a greater value than this\n");
+        }
+        return false;
+    }
+}
+public class NUMBER_GAME {
+    public static void main(String[] args) {
+        number_guesses nmber = new number_guesses();
+        boolean n = false;
+        while(!n){
+            nmber.take_input_from_user();
+            n = nmber.check_the_number();
+        }
+    }
+}
