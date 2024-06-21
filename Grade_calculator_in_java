@@ -1,0 +1,38 @@
+#Grade calculator in java
+import java.util.Scanner;
+public class Grade_calculator {
+    public static void main(String[] args) {
+        Scanner src = new Scanner(System.in);
+        System.out.print("Enter the marks of DSA : ");
+        int dsa = src.nextInt();
+        System.out.print("Enter the marks of R-Programing : ");
+        int rp = src.nextInt();
+        System.out.print("Enter the marks of JAVA : ");
+        int java = src.nextInt();
+        System.out.print("Enter the marks of C++ : ");
+        int c = src.nextInt();
+        System.out.print("Enter the marks of Python : ");
+        int pyth = src.nextInt();
+        int total_marks = (dsa+rp+java+c+pyth);
+        System.out.println("Total marks obtained from 500marks are " + total_marks);
+        double average = (double) total_marks/5;
+        System.out.println("Average Marks : " + average);
+        char Grade;
+        if(average>=90){
+            Grade = 'A';
+            System.out.println("Grade : "+ Grade);
+        } else if (average>=80){
+            Grade = 'B';
+            System.out.println("Grade : "+ Grade);
+        } else if (average>=70){
+            Grade = 'C';
+            System.out.println("Grade : "+ Grade);
+        } else if(average>=60){
+            Grade = 'D';
+            System.out.println("Grade :"+ Grade);
+        } else {
+            Grade = 'E';
+            System.out.println("Grade : "+ Grade);
+        }
+    }
+}
